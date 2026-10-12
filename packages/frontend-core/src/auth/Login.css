@@ -1,0 +1,635 @@
+/* =========================================================
+   BYSELLENS — LOGIN
+   ========================================================= */
+
+.login-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 25px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #ffffff 0%,
+      #fffafd 52%,
+      #fff4f8 100%
+    );
+}
+
+/* =========================================================
+   DECORACIONES
+   ========================================================= */
+
+.login-bg {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border: 2px solid rgba(216, 126, 157, 0.15);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.login-bg::after {
+  content: '';
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border: 1px solid rgba(216, 126, 157, 0.09);
+
+  border-radius: 50%;
+}
+
+.login-bg-left {
+  left: -430px;
+  bottom: -280px;
+}
+
+.login-bg-left::after {
+  left: 125px;
+  top: 85px;
+}
+
+.login-bg-right {
+  right: -430px;
+  bottom: -280px;
+}
+
+.login-bg-right::after {
+  right: 125px;
+  top: 85px;
+}
+
+/* =========================================================
+   TARJETA
+   ========================================================= */
+
+.login-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 880px;
+
+  padding: 52px 100px 42px;
+
+  background: #ffffff;
+
+  border: 1px solid #efc5d6;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 22px 55px
+    rgba(198, 99, 137, 0.10);
+}
+
+/* =========================================================
+   MARCA
+   ========================================================= */
+
+.login-brand {
+  text-align: center;
+
+  margin-bottom: 38px;
+}
+
+.login-logo {
+  width: 76px;
+  height: 76px;
+
+  margin: 0 auto 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #edbfd1;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f9e1ea,
+      #f5d4e1
+    );
+
+  color: #a95476;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 29px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 9px 23px
+    rgba(201, 130, 157, 0.12);
+}
+
+.login-brand h1 {
+  margin: 0;
+
+  color: #b9577b;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 44px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  line-height: 1.05;
+}
+
+.login-brand p {
+  margin: 10px 0 0;
+
+  color: #bb8199;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 17px;
+}
+
+.login-brand-line {
+  width: 90px;
+  height: 2px;
+
+  margin: 20px auto 0;
+
+  border-radius: 10px;
+
+  background: #d4779a;
+}
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.login-form {
+  width: 100%;
+}
+
+.login-field {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.login-field label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #74485a;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.login-input {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 58px;
+
+  border: 1px solid #edbfd2;
+
+  border-radius: 13px;
+
+  background: #fffafd;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.login-input:focus-within {
+  border-color: #d4779a;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(212, 119, 154, 0.09);
+}
+
+/* =========================================================
+   ICONO
+   ========================================================= */
+
+.login-field-icon {
+  flex: 0 0 auto;
+
+  margin-left: 18px;
+
+  color: #d07899;
+
+  font-size: 21px;
+}
+
+/* =========================================================
+   INPUT NATIVO
+   ========================================================= */
+
+.login-input input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0 14px;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #674b57;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.login-input input::placeholder {
+  color: #c6a4b3;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   QUITAR APARIENCIA GRIS DE AUTOCOMPLETADO
+   ========================================================= */
+
+.login-input input:-webkit-autofill,
+.login-input input:-webkit-autofill:hover,
+.login-input input:-webkit-autofill:focus,
+.login-input input:-webkit-autofill:active {
+  -webkit-text-fill-color: #674b57 !important;
+
+  -webkit-box-shadow:
+    0 0 0 1000px #fffafd inset !important;
+
+  box-shadow:
+    0 0 0 1000px #fffafd inset !important;
+
+  background-color: #fffafd !important;
+
+  transition:
+    background-color 9999s ease-out;
+}
+
+/* =========================================================
+   SELECCIÓN DE TEXTO
+   ========================================================= */
+
+.login-input input::selection {
+  background: #f2b8cd;
+
+  color: #673f50;
+}
+
+/* =========================================================
+   OJO
+   ========================================================= */
+
+.login-eye {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 3px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #c86f93;
+
+  cursor: pointer;
+}
+
+.login-eye:hover {
+  background: #fceaf1;
+
+  color: #a95778;
+}
+
+.login-eye ion-icon {
+  font-size: 21px;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.login-error {
+  width: 100%;
+
+  margin: -2px 0 18px;
+
+  padding: 12px 15px;
+
+  border: 1px solid #efcbd7;
+
+  border-radius: 10px;
+
+  background: #fff3f6;
+
+  color: #a14d64;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 58px;
+
+  margin: 10px auto 0;
+
+  padding: 0 25px;
+
+  border: 0;
+
+  border-radius: 13px;
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d985a7,
+      #c96891
+    );
+
+  color: #ffffff;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 23px
+    rgba(190, 91, 128, 0.22);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.login-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #cf789c,
+      #bd5d87
+    );
+
+  box-shadow:
+    0 12px 27px
+    rgba(190, 91, 128, 0.27);
+
+  transform: translateY(-1px);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  opacity: 0.75;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   CARGANDO
+   ========================================================= */
+
+.login-loading {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.login-footer {
+  width: 100%;
+
+  margin-top: 35px;
+}
+
+.login-footer-decoration {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 18px;
+}
+
+.login-footer-decoration span {
+  flex: 1;
+
+  height: 1px;
+
+  background: #efd5df;
+}
+
+.login-footer-decoration ion-icon {
+  flex: 0 0 auto;
+
+  color: #d77d9e;
+
+  font-size: 25px;
+}
+
+.login-footer p {
+  margin: 11px 0 0;
+
+  text-align: center;
+
+  color: #b17e93;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .login-card {
+    max-width: 760px;
+
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .login-page {
+    padding: 25px 15px;
+  }
+
+  .login-card {
+    max-width: 100%;
+
+    padding: 42px 28px 34px;
+
+    border-radius: 22px;
+  }
+
+  .login-logo {
+    width: 65px;
+    height: 65px;
+
+    font-size: 25px;
+  }
+
+  .login-brand h1 {
+    font-size: 33px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .login-brand p {
+    font-size: 14px;
+  }
+
+  .login-field label {
+    font-size: 14px;
+  }
+
+  .login-input {
+    height: 54px;
+  }
+
+  .login-button {
+    height: 55px;
+
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  .login-card {
+    padding: 35px 21px 30px;
+  }
+
+  .login-brand h1 {
+    font-size: 28px;
+  }
+
+  .login-logo {
+    width: 59px;
+    height: 59px;
+
+    font-size: 23px;
+  }
+
+}
