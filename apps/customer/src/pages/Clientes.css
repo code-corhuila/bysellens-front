@@ -1,0 +1,1183 @@
+/* =========================================================
+   CLIENTES
+   ESTILOS COMPLETAMENTE AISLADOS
+========================================================= */
+
+.clientes-page {
+  min-height: 100vh;
+  background: #fff8fb;
+  color: #3d3540;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.clientes-header {
+  padding: 42px 48px 28px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #f1dbe5;
+}
+
+
+.clientes-eyebrow,
+.cliente-form-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #c65b87;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.clientes-header h1 {
+  margin: 0;
+
+  color: #2f2a32;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 42px;
+  line-height: 1.1;
+}
+
+
+.clientes-header p {
+  margin: 10px 0 0;
+
+  color: #8d7c87;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   BOTÓN NUEVO
+========================================================= */
+
+.clientes-new-button {
+  border: none;
+
+  min-height: 50px;
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  border-radius: 14px;
+
+  background: #d45d8a;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 10px 25px rgba(212, 93, 138, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.clientes-new-button:hover {
+  background: #c84f7d;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 12px 28px rgba(212, 93, 138, 0.25);
+}
+
+
+.clientes-new-button ion-icon {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.clientes-content {
+  padding: 30px 48px 50px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.clientes-card {
+  background: #ffffff;
+
+  border: 1px solid #efd9e3;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(85, 54, 70, 0.04);
+}
+
+
+.clientes-card-header {
+  padding: 26px 28px 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.clientes-card-header h2 {
+  margin: 0 0 5px;
+
+  color: #3d3540;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 22px;
+}
+
+
+.clientes-card-header span {
+  color: #a18f99;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.clientes-search {
+  margin: 0 28px 24px;
+
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 15px;
+
+  border: 1px solid #efd5e1;
+
+  border-radius: 12px;
+
+  background: #fffafb;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+
+.clientes-search:focus-within {
+  border-color: #d45d8a;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 93, 138, 0.08);
+}
+
+
+.clientes-search ion-icon {
+  color: #c65b87;
+
+  font-size: 19px;
+}
+
+
+.clientes-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #3d3540;
+
+  font-family: inherit;
+
+  font-size: 14px;
+}
+
+
+.clientes-search input::placeholder {
+  color: #b4a4ad;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.clientes-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.clientes-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+}
+
+
+.clientes-table thead {
+  background: #fff1f6;
+}
+
+
+.clientes-table th {
+  padding: 15px 18px;
+
+  text-align: left;
+
+  color: #75636d;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  border-top: 1px solid #f1dbe5;
+  border-bottom: 1px solid #f1dbe5;
+
+  white-space: nowrap;
+}
+
+
+.clientes-table td {
+  padding: 17px 18px;
+
+  color: #665862;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #f3e1e8;
+
+  vertical-align: middle;
+}
+
+
+.clientes-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.clientes-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+
+.clientes-table tbody tr:hover {
+  background: #fffafd;
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.cliente-name-cell {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 160px;
+}
+
+
+.cliente-name-cell strong {
+  color: #3c333b;
+
+  font-size: 13px;
+}
+
+
+.cliente-avatar {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f9dce8;
+
+  color: #c34f7e;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ESTADO
+========================================================= */
+
+.cliente-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 68px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.cliente-badge.active {
+  border: 1px solid #a8dfd1;
+
+  background: #f2fcf9;
+
+  color: #239a7e;
+}
+
+
+.cliente-badge.inactive {
+  border: 1px solid #ecc7d3;
+
+  background: #fff5f7;
+
+  color: #c95c7c;
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.cliente-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.cliente-action {
+  height: 36px;
+
+  padding: 0 12px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  border-radius: 9px;
+
+  background: white;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.cliente-action ion-icon {
+  font-size: 15px;
+}
+
+
+.cliente-action.edit {
+  border: 1px solid #efd2de;
+
+  color: #c65782;
+}
+
+
+.cliente-action.edit:hover {
+  background: #fff1f6;
+
+  border-color: #d98baa;
+}
+
+
+.cliente-action.delete {
+  border: 1px solid #efd2de;
+
+  color: #cf647c;
+}
+
+
+.cliente-action.delete:hover {
+  background: #fff3f5;
+
+  border-color: #df9aaa;
+}
+
+
+/* =========================================================
+   ESTADO VACÍO
+========================================================= */
+
+.clientes-empty {
+  height: 260px;
+
+  text-align: center !important;
+}
+
+
+.clientes-empty-icon {
+  width: 52px;
+  height: 52px;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fbe5ed;
+
+  color: #cf5d87;
+}
+
+
+.clientes-empty-icon ion-icon {
+  font-size: 25px;
+}
+
+
+.clientes-empty strong,
+.clientes-empty span {
+  display: block;
+}
+
+
+.clientes-empty strong {
+  margin-bottom: 6px;
+
+  color: #4a3c44;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 17px;
+}
+
+
+.clientes-empty span {
+  color: #9b8992;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.cliente-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  background: rgba(39, 31, 36, 0.42);
+
+  animation: clienteOverlayIn 0.2s ease;
+}
+
+
+@keyframes clienteOverlayIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   BACKDROP
+========================================================= */
+
+.cliente-modal-backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.cliente-modal-panel {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(620px, 92vw);
+
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: #fff9fb;
+
+  box-shadow:
+    -15px 0 50px rgba(52, 35, 44, 0.15);
+
+  animation: clientePanelIn 0.28s ease;
+}
+
+
+@keyframes clientePanelIn {
+
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.cliente-form {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff9fb;
+}
+
+
+/* =========================================================
+   HEADER FORM
+========================================================= */
+
+.cliente-form-header {
+  flex-shrink: 0;
+
+  padding: 34px 42px 28px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  border-bottom: 1px solid #efdce4;
+}
+
+
+.cliente-form-header h1 {
+  margin: 0;
+
+  color: #302932;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 38px;
+
+  line-height: 1.08;
+}
+
+
+.cliente-form-header p {
+  margin: 10px 0 0;
+
+  color: #8e7c86;
+
+  font-size: 14px;
+}
+
+
+.cliente-close-button {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #edcfdb;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #cf5c86;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.cliente-close-button:hover {
+  background: #fff0f5;
+
+  border-color: #d98baa;
+
+  transform: rotate(5deg);
+}
+
+
+.cliente-close-button ion-icon {
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   CONTENIDO FORM
+========================================================= */
+
+.cliente-form-content {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 30px 42px 35px;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.cliente-section {
+  padding: 0 0 30px;
+
+  margin-bottom: 28px;
+
+  border-bottom: 1px solid #efdce4;
+}
+
+
+.cliente-section:last-child {
+  margin-bottom: 0;
+
+  border-bottom: none;
+}
+
+
+.cliente-section-title {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+}
+
+
+.cliente-section-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fbe4ed;
+
+  color: #d15883;
+}
+
+
+.cliente-section-icon ion-icon {
+  font-size: 21px;
+}
+
+
+.cliente-section-title h2 {
+  margin: 0 0 5px;
+
+  color: #3a3138;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 21px;
+}
+
+
+.cliente-section-title p {
+  margin: 0;
+
+  color: #94828b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.cliente-fields {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+
+.cliente-field {
+  min-width: 0;
+}
+
+
+.cliente-field-full {
+  grid-column: 1 / -1;
+}
+
+
+.cliente-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #40353d;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.cliente-field label span {
+  color: #d45d8a;
+}
+
+
+.cliente-field input {
+  width: 100%;
+
+  height: 50px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px;
+
+  border: 1px solid #e9cbd8;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #40363d;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.cliente-field input::placeholder {
+  color: #b3a2ab;
+}
+
+
+.cliente-field input:focus {
+  border-color: #d45d8a;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 93, 138, 0.08);
+}
+
+
+/* =========================================================
+   ESTADO
+========================================================= */
+
+.cliente-status-card {
+  min-height: 76px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #ebd2dc;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+}
+
+
+.cliente-status-card strong,
+.cliente-status-card span {
+  display: block;
+}
+
+
+.cliente-status-card strong {
+  margin-bottom: 4px;
+
+  color: #40343c;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  font-size: 16px;
+}
+
+
+.cliente-status-card span {
+  color: #98858e;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   SWITCH
+========================================================= */
+
+.cliente-switch {
+  position: relative;
+
+  width: 52px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: #d7cbd0;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+
+.cliente-switch span {
+  position: absolute;
+
+  top: 4px;
+  left: 4px;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.2s ease;
+}
+
+
+.cliente-switch.active {
+  background: #d45d8a;
+}
+
+
+.cliente-switch.active span {
+  transform: translateX(22px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.cliente-form-footer {
+  flex-shrink: 0;
+
+  padding: 18px 42px 24px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.25fr;
+
+  gap: 14px;
+
+  border-top: 1px solid #efdce4;
+
+  background: rgba(255, 249, 251, 0.97);
+}
+
+
+.cliente-button {
+  height: 54px;
+
+  border-radius: 12px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.cliente-button ion-icon {
+  font-size: 18px;
+}
+
+
+.cliente-button-secondary {
+  border: 1px solid #e8cbd7;
+
+  background: #ffffff;
+
+  color: #765f69;
+}
+
+
+.cliente-button-secondary:hover {
+  background: #fff5f8;
+
+  transform: translateY(-1px);
+}
+
+
+.cliente-button-primary {
+  border: 1px solid #d45d8a;
+
+  background: #d45d8a;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 9px 22px rgba(212, 93, 138, 0.18);
+}
+
+
+.cliente-button-primary:hover {
+  background: #c94f7e;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 25px rgba(212, 93, 138, 0.25);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .clientes-header {
+    padding: 30px 25px 25px;
+  }
+
+
+  .clientes-content {
+    padding: 25px;
+  }
+
+
+  .clientes-header h1 {
+    font-size: 34px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .clientes-header {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+
+  .clientes-new-button {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+
+  .cliente-modal-panel {
+    width: 100%;
+  }
+
+
+  .cliente-form-header {
+    padding: 25px 24px;
+  }
+
+
+  .cliente-form-header h1 {
+    font-size: 32px;
+  }
+
+
+  .cliente-form-content {
+    padding: 25px 24px 30px;
+  }
+
+
+  .cliente-fields {
+    grid-template-columns: 1fr;
+  }
+
+
+  .cliente-field-full {
+    grid-column: auto;
+  }
+
+
+  .cliente-form-footer {
+    padding: 15px 24px 20px;
+
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .clientes-header {
+    padding: 25px 18px 20px;
+  }
+
+
+  .clientes-content {
+    padding: 18px;
+  }
+
+
+  .clientes-card {
+    border-radius: 15px;
+  }
+
+
+  .cliente-form-header {
+    padding: 22px 18px;
+  }
+
+
+  .cliente-form-content {
+    padding: 22px 18px;
+  }
+
+
+  .cliente-form-footer {
+    padding: 14px 18px 18px;
+  }
+
+
+  .cliente-section-title {
+    gap: 10px;
+  }
+
+
+  .cliente-section-title h2 {
+    font-size: 19px;
+  }
+
+}

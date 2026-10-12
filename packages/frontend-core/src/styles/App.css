@@ -1,0 +1,654 @@
+/* =========================================================
+   BY SELLENS — LAYOUT PRINCIPAL
+   ========================================================= */
+
+:root {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  color: #3f3940;
+
+  background: #fff9fb;
+
+  font-synthesis: none;
+
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #fff9fb;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* =========================================================
+   IONIC
+   ========================================================= */
+
+ion-app {
+  display: block;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+}
+
+ion-router-outlet {
+  display: block;
+
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+}
+
+ion-page {
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================================
+   LAYOUT PRINCIPAL
+   ========================================================= */
+
+.app-layout {
+  display: flex;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+
+  background: #fff9fb;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  flex: 0 0 262px;
+
+  width: 262px;
+  height: 100vh;
+
+  padding: 31px 22px 22px;
+
+  border-right: 1px solid #eedfe5;
+
+  background: #fff2f6;
+
+  overflow: hidden;
+}
+
+.sidebar-brand {
+  margin: 0 0 31px;
+
+  padding-left: 1px;
+}
+
+.sidebar-brand-name {
+  display: block;
+
+  color: #bd6b8c;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.2px;
+
+  line-height: 1.05;
+}
+
+/* =========================================================
+   MENÚ SIDEBAR
+   ========================================================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  width: 100%;
+}
+
+.sidebar-item {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+  min-height: 43px;
+
+  padding: 0 13px;
+
+  border: 0;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #51484f;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease,
+    transform 0.12s ease;
+}
+
+.sidebar-item ion-icon {
+  flex: 0 0 auto;
+
+  color: #bd6689;
+
+  font-size: 18px;
+}
+
+.sidebar-item:hover {
+  background: #fbe0ea;
+
+  color: #a95577;
+}
+
+.sidebar-item:active {
+  transform: scale(0.98);
+}
+
+.sidebar-item:focus-visible {
+  outline: 2px solid #d995ae;
+
+  outline-offset: 2px;
+}
+
+.sidebar-item.active {
+  background: #f3b7ce;
+
+  color: #b14f76;
+
+  font-weight: 750;
+}
+
+.sidebar-item.active ion-icon {
+  color: #bd527a;
+}
+
+/* =========================================================
+   USUARIO
+   ========================================================= */
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: auto;
+
+  padding: 17px 2px 1px;
+
+  border-top: 1px solid #ead7df;
+}
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  width: 31px;
+  height: 31px;
+
+  border: 1px solid #e8cbd6;
+
+  border-radius: 50%;
+
+  background: #f6dbe5;
+
+  color: #a95878;
+
+  font-size: 11px;
+
+  font-weight: 750;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.user-info strong {
+  color: #544950;
+
+  font-size: 10px;
+
+  line-height: 1.1;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.user-info span {
+  color: #9a8e95;
+
+  font-size: 8px;
+
+  line-height: 1.1;
+}
+
+/* =========================================================
+   CERRAR SESIÓN
+   ========================================================= */
+
+.sidebar-logout {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+  min-height: 40px;
+
+  margin-top: 12px;
+
+  padding: 0 13px;
+
+  border: 0;
+  border-radius: 10px;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #8f6474;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.16s ease,
+    color 0.16s ease;
+}
+
+.sidebar-logout ion-icon {
+  flex: 0 0 auto;
+
+  font-size: 18px;
+}
+
+.sidebar-logout:hover {
+  background: #fbe0ea;
+
+  color: #a95577;
+}
+
+.sidebar-logout:focus-visible {
+  outline: 2px solid #d995ae;
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.main-content {
+  position: relative;
+
+  width: calc(100% - 262px);
+
+  min-width: 0;
+  min-height: 100vh;
+
+  margin-left: 262px;
+
+  background: #fff9fb;
+
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.main-content > ion-router-outlet {
+  position: relative !important;
+
+  display: block !important;
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 100vh;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  overflow: hidden;
+}
+
+.main-content ion-page {
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  min-width: 0 !important;
+
+  margin: 0 !important;
+}
+
+/* =========================================================
+   EVITAR DESBORDAMIENTO
+   ========================================================= */
+
+.main-content,
+.main-content * {
+  max-width: 100%;
+}
+
+.main-content ion-content {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   LOGIN — CONTENEDOR SIN SIDEBAR
+   ========================================================= */
+
+.main-content-login {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  min-height: 100vh;
+
+  margin-left: 0;
+
+  background: #fff9fb;
+
+  overflow-x: hidden;
+}
+
+.main-content-login > ion-router-outlet {
+  position: relative !important;
+
+  display: block !important;
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  min-width: 0 !important;
+
+  height: 100vh !important;
+
+  min-height: 100vh !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+
+  overflow: hidden;
+}
+
+.main-content-login ion-page {
+  position: relative;
+
+  display: block;
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  min-width: 0 !important;
+
+  min-height: 100vh;
+
+  margin: 0 !important;
+}
+
+.main-content-login ion-content {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 100vh;
+
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  .app-layout {
+    display: block;
+  }
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    padding: 18px 16px 15px;
+
+    border-right: 0;
+
+    border-bottom: 1px solid #eedfe5;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 16px;
+  }
+
+  .sidebar-brand-name {
+    display: inline;
+
+    margin-right: 4px;
+
+    font-size: 16px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+
+    gap: 4px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+  }
+
+  .sidebar-item {
+    flex: 0 0 auto;
+
+    width: auto;
+
+    min-height: 38px;
+
+    padding: 0 11px;
+  }
+
+  .sidebar-user {
+    display: none;
+  }
+
+  .sidebar-logout {
+    width: auto;
+
+    margin-top: 10px;
+
+    padding: 8px 11px;
+  }
+
+  .main-content {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    margin-left: 0;
+  }
+
+  .main-content > ion-router-outlet {
+    height: auto;
+
+    min-height: calc(100vh - 150px);
+  }
+
+  /* LOGIN EN MÓVIL */
+
+  .main-content-login {
+    width: 100%;
+
+    min-height: 100vh;
+
+    margin-left: 0;
+  }
+
+  .main-content-login > ion-router-outlet {
+    width: 100% !important;
+
+    height: 100vh !important;
+
+    min-height: 100vh !important;
+  }
+
+  .main-content-login ion-page {
+    width: 100% !important;
+
+    min-height: 100vh;
+  }
+
+  .main-content-login ion-content {
+    width: 100%;
+
+    min-height: 100vh;
+  }
+}
