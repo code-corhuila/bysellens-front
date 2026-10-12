@@ -1,0 +1,55 @@
+services:
+  shell:
+    build:
+      context: ./apps/shell
+      dockerfile: Dockerfile
+      args:
+        DATA_MODE: ${DATA_MODE:-mock}
+        API_BASE_URL: ${API_BASE_URL:-http://localhost:8080}
+    ports:
+      - "5173:80"
+    depends_on:
+      customer:
+        condition: service_healthy
+      inventory:
+        condition: service_healthy
+      product:
+        condition: service_healthy
+      sales:
+        condition: service_healthy
+  customer:
+    build:
+      context: ./apps/customer
+      dockerfile: Dockerfile
+      args:
+        DATA_MODE: ${DATA_MODE:-mock}
+        API_BASE_URL: ${API_BASE_URL:-http://localhost:8080}
+    ports:
+      - "5174:80"
+  inventory:
+    build:
+      context: ./apps/inventory
+      dockerfile: Dockerfile
+      args:
+        DATA_MODE: ${DATA_MODE:-mock}
+        API_BASE_URL: ${API_BASE_URL:-http://localhost:8080}
+    ports:
+      - "5175:80"
+  product:
+    build:
+      context: ./apps/product
+      dockerfile: Dockerfile
+      args:
+        DATA_MODE: ${DATA_MODE:-mock}
+        API_BASE_URL: ${API_BASE_URL:-http://localhost:8080}
+    ports:
+      - "5176:80"
+  sales:
+    build:
+      context: ./apps/sales
+      dockerfile: Dockerfile
+      args:
+        DATA_MODE: ${DATA_MODE:-mock}
+        API_BASE_URL: ${API_BASE_URL:-http://localhost:8080}
+    ports:
+      - "5177:80"
