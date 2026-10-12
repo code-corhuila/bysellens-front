@@ -1,0 +1,7 @@
+node_modules
+dist
+.git*
+.migration-baseline
+cypress*
+code
+package-lock-LAPTOP-NDAP00Q0.json

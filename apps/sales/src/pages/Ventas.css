@@ -1,0 +1,1726 @@
+/* =========================================================
+   VENTAS - PÉTALOS ADMIN
+   Estilos independientes de Productos / Inventario / Clientes
+========================================================= */
+
+.ventas-page {
+  --ventas-primary: #d45f8b;
+  --ventas-primary-dark: #bd4d78;
+  --ventas-primary-soft: #f8b4cb;
+  --ventas-bg: #fff9fb;
+  --ventas-white: #ffffff;
+  --ventas-border: #ecd5df;
+  --ventas-text: #332b31;
+  --ventas-muted: #8e7882;
+
+  min-height: 100vh;
+  width: 100%;
+
+  box-sizing: border-box;
+
+  background: var(--ventas-bg);
+
+  color: var(--ventas-text);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+.ventas-page *,
+.ventas-page *::before,
+.ventas-page *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.ventas-header {
+  width: 100%;
+
+  padding: 42px 52px 30px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border-bottom: 1px solid var(--ventas-border);
+
+  background: var(--ventas-bg);
+}
+
+
+.ventas-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #b65d7e;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+.ventas-header h1 {
+  margin: 0 0 8px;
+
+  color: #2e2830;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 42px;
+
+  line-height: 1.05;
+
+  font-weight: 700;
+}
+
+
+.ventas-header p {
+  margin: 0;
+
+  color: var(--ventas-muted);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BOTÓN NUEVA VENTA
+========================================================= */
+
+.ventas-new-button {
+  flex-shrink: 0;
+
+  min-width: 155px;
+
+  height: 48px;
+
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: var(--ventas-primary);
+
+  color: white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 24px rgba(212, 95, 139, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ventas-new-button:hover {
+  background: var(--ventas-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 13px 28px rgba(212, 95, 139, 0.22);
+}
+
+.ventas-new-button ion-icon {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.ventas-content {
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 30px 52px 60px;
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+========================================================= */
+
+.ventas-stats {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+
+.venta-stat-card {
+  min-height: 108px;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  border: 1px solid var(--ventas-border);
+
+  border-radius: 15px;
+
+  background: var(--ventas-white);
+
+  box-shadow:
+    0 5px 18px rgba(80, 40, 55, 0.025);
+}
+
+
+.venta-stat-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #fde8f0;
+
+  color: var(--ventas-primary);
+}
+
+
+.venta-stat-icon ion-icon {
+  font-size: 22px;
+}
+
+
+.venta-stat-card span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--ventas-muted);
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.venta-stat-card strong {
+  display: block;
+
+  color: #3c3238;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+========================================================= */
+
+.ventas-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid var(--ventas-border);
+
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow:
+    0 6px 22px rgba(80, 40, 55, 0.025);
+}
+
+
+/* =========================================================
+   CABECERA TABLA
+========================================================= */
+
+.ventas-card-header {
+  min-height: 88px;
+
+  padding: 20px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid var(--ventas-border);
+}
+
+
+.ventas-card-header h2 {
+  margin: 0 0 5px;
+
+  color: #3a3037;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+.ventas-card-header span {
+  color: var(--ventas-muted);
+
+  font-size: 12px;
+}
+
+
+.ventas-refresh-button {
+  height: 40px;
+
+  padding: 0 17px;
+
+  border: 1px solid #e6c8d5;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #b9577c;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ventas-refresh-button:hover {
+  background: #fff4f8;
+
+  border-color: #dca0b8;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.ventas-search {
+  margin: 18px 22px;
+
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  border: 1px solid #e8d1dc;
+
+  border-radius: 10px;
+
+  background: #fffafb;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.ventas-search:focus-within {
+  border-color: #d45f8b;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 95, 139, 0.07);
+}
+
+
+.ventas-search ion-icon {
+  flex-shrink: 0;
+
+  color: #bd718e;
+
+  font-size: 17px;
+}
+
+
+.ventas-search input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #44373f;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+}
+
+
+.ventas-search input::placeholder {
+  color: #a9939d;
+}
+
+
+/* =========================================================
+   TABLA
+========================================================= */
+
+.ventas-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+.ventas-table {
+  width: 100%;
+
+  min-width: 850px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+}
+
+
+.ventas-table thead {
+  background: #fff1f6;
+}
+
+
+.ventas-table th {
+  height: 47px;
+
+  padding: 0 18px;
+
+  border-top: 1px solid #f0dce4;
+
+  border-bottom: 1px solid #ecd7e0;
+
+  color: #806874;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+.ventas-table td {
+  height: 70px;
+
+  padding: 12px 18px;
+
+  border-bottom: 1px solid #f0e1e7;
+
+  color: #665861;
+
+  font-size: 12px;
+
+  vertical-align: middle;
+}
+
+
+.ventas-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.ventas-table tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+
+.ventas-table tbody tr:hover {
+  background: #fffafd;
+}
+
+
+/* =========================================================
+   ANCHOS DE COLUMNAS
+========================================================= */
+
+.ventas-table th:nth-child(1),
+.ventas-table td:nth-child(1) {
+  width: 75px;
+}
+
+
+.ventas-table th:nth-child(2),
+.ventas-table td:nth-child(2) {
+  width: 125px;
+}
+
+
+.ventas-table th:nth-child(3),
+.ventas-table td:nth-child(3) {
+  width: 230px;
+}
+
+
+.ventas-table th:nth-child(4),
+.ventas-table td:nth-child(4) {
+  width: 150px;
+}
+
+
+.ventas-table th:nth-child(5),
+.ventas-table td:nth-child(5) {
+  width: 145px;
+}
+
+
+.ventas-table th:nth-child(6),
+.ventas-table td:nth-child(6) {
+  width: 150px;
+}
+
+
+/* =========================================================
+   ID
+========================================================= */
+
+.venta-id {
+  display: inline-flex;
+
+  padding: 6px 9px;
+
+  border-radius: 7px;
+
+  background: #fff0f5;
+
+  color: #bd587d;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CLIENTE
+========================================================= */
+
+.venta-client-cell {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.venta-avatar {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f9d9e6;
+
+  color: #bd557b;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.venta-client-cell strong {
+  color: #42363d;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.venta-products-count {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #786771;
+
+  font-size: 11px;
+}
+
+
+.venta-products-count ion-icon {
+  color: #c65c82;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.venta-total {
+  color: #bf5078;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   MÉTODO DE PAGO
+========================================================= */
+
+.venta-payment-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 27px;
+
+  padding: 0 10px;
+
+  border: 1px solid #ead2dc;
+
+  border-radius: 20px;
+
+  background: #fff8fa;
+
+  color: #9d5875;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MENSAJES
+========================================================= */
+
+.ventas-message {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  color: var(--ventas-muted);
+
+  font-size: 13px;
+}
+
+
+.ventas-error {
+  color: #c94e61;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.ventas-empty {
+  min-height: 300px;
+
+  padding: 50px 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.ventas-empty-icon {
+  width: 60px;
+  height: 60px;
+
+  margin-bottom: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fde8f0;
+
+  color: var(--ventas-primary);
+}
+
+
+.ventas-empty-icon ion-icon {
+  font-size: 25px;
+}
+
+
+.ventas-empty strong {
+  margin-bottom: 6px;
+
+  color: #44373f;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 18px;
+}
+
+
+.ventas-empty span {
+  margin-bottom: 20px;
+
+  color: var(--ventas-muted);
+
+  font-size: 12px;
+}
+
+
+.ventas-empty-button {
+  height: 40px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: var(--ventas-primary);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.venta-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  background: rgba(45, 35, 41, 0.35);
+
+  backdrop-filter: blur(1.5px);
+}
+
+
+.venta-modal-backdrop {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.venta-modal-panel {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(650px, 100vw);
+
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  background: #fffafb;
+
+  box-shadow:
+    -15px 0 40px rgba(40, 25, 32, 0.12);
+
+  animation:
+    ventaPanelIn 0.25s ease-out;
+}
+
+
+@keyframes ventaPanelIn {
+
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================================================
+   HEADER DEL FORMULARIO
+========================================================= */
+
+.venta-form-header {
+  flex-shrink: 0;
+
+  padding: 30px 34px 26px;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-bottom: 1px solid #ecd6df;
+
+  background: #fffafb;
+}
+
+
+.venta-form-eyebrow {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #b95e7f;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+}
+
+
+.venta-form-header h2 {
+  margin: 0 0 7px;
+
+  color: #312a31;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 35px;
+
+  line-height: 1.1;
+}
+
+
+.venta-form-header p {
+  margin: 0;
+
+  color: #927d87;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+.venta-close-button {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e8cbd6;
+
+  border-radius: 50%;
+
+  background: white;
+
+  color: #cb5b82;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.venta-close-button:hover {
+  background: #fff1f6;
+
+  border-color: #d998af;
+}
+
+
+.venta-close-button ion-icon {
+  font-size: 21px;
+}
+
+
+/* =========================================================
+   CONTENIDO DEL FORMULARIO
+========================================================= */
+
+.venta-form-content {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  padding: 28px 34px 35px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color: #e1afc2 transparent;
+}
+
+
+.venta-form-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.venta-form-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.venta-form-content::-webkit-scrollbar-thumb {
+  background: #e1afc2;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.venta-section {
+  padding-bottom: 28px;
+
+  margin-bottom: 28px;
+
+  border-bottom: 1px solid #ead7df;
+}
+
+
+.venta-section:last-of-type {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TÍTULO SECCIÓN
+========================================================= */
+
+.venta-section-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+
+.venta-section-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fbe3ec;
+
+  color: #d15882;
+}
+
+
+.venta-section-icon ion-icon {
+  font-size: 20px;
+}
+
+
+.venta-section-title h3 {
+  margin: 0 0 4px;
+
+  color: #3c3239;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+
+.venta-section-title p {
+  margin: 0;
+
+  color: #967f89;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.venta-field {
+  width: 100%;
+
+  margin-top: 5px;
+}
+
+
+.venta-field label,
+.venta-product-select label,
+.venta-quantity label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #40353c;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.venta-field label span {
+  color: #d15882;
+}
+
+
+/* =========================================================
+   SELECTS
+========================================================= */
+
+.venta-field select,
+.venta-product-select select {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 42px 0 14px;
+
+  border: 1px solid #e6ccd7;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background-color: white;
+
+  color: #493b43;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 50%,
+      #bd6686 50%
+    ),
+    linear-gradient(
+      135deg,
+      #bd6686 50%,
+      transparent 50%
+    );
+
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 13px) 20px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.venta-field select:hover,
+.venta-product-select select:hover {
+  border-color: #d9a0b6;
+}
+
+
+.venta-field select:focus,
+.venta-product-select select:focus {
+  border-color: #d45f8b;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 95, 139, 0.08);
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.venta-products-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.venta-product-row {
+  width: 100%;
+
+  padding: 15px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    70px
+    90px
+    38px;
+
+  gap: 12px;
+
+  align-items: end;
+
+  border: 1px solid #e8cfd9;
+
+  border-radius: 12px;
+
+  background: white;
+}
+
+
+.venta-product-select {
+  min-width: 0;
+}
+
+
+.venta-product-select select {
+  height: 46px;
+
+  font-size: 11px;
+
+  text-overflow: ellipsis;
+}
+
+
+.venta-quantity input {
+  width: 100%;
+
+  height: 46px;
+
+  padding: 0 8px;
+
+  border: 1px solid #e6ccd7;
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: white;
+
+  color: #453840;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+
+.venta-quantity input:focus {
+  border-color: #d45f8b;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 95, 139, 0.08);
+}
+
+
+/* =========================================================
+   TOTAL DEL PRODUCTO
+========================================================= */
+
+.venta-product-total {
+  height: 46px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+.venta-product-total span {
+  margin-bottom: 3px;
+
+  color: #a18b94;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+}
+
+
+.venta-product-total strong {
+  color: #44373e;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ELIMINAR PRODUCTO
+========================================================= */
+
+.venta-remove-product {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ebccd7;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #c9577d;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.venta-remove-product:hover {
+  background: #fff0f5;
+
+  border-color: #dca1b7;
+}
+
+
+.venta-remove-product ion-icon {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   AGREGAR OTRO PRODUCTO
+========================================================= */
+
+.venta-add-product {
+  width: 100%;
+
+  height: 45px;
+
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px dashed #dda5bb;
+
+  border-radius: 10px;
+
+  background: #fff8fb;
+
+  color: #c6537d;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.venta-add-product:hover {
+  background: #fff0f5;
+
+  border-color: #cf88a5;
+}
+
+
+.venta-add-product ion-icon {
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   RESUMEN
+========================================================= */
+
+.venta-summary {
+  width: 100%;
+
+  margin-top: 24px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 1px solid #e6c4d2;
+
+  border-radius: 12px;
+
+  background: #fff1f6;
+}
+
+
+.venta-summary span {
+  color: #775e69;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.venta-summary strong {
+  color: #c34e78;
+
+  font-family:
+    Georgia,
+    'Times New Roman',
+    serif;
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   ERROR FORMULARIO
+========================================================= */
+
+.venta-form-error {
+  margin-top: 15px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #efc4ca;
+
+  border-radius: 9px;
+
+  background: #fff2f3;
+
+  color: #bd4f5b;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FOOTER FORMULARIO
+========================================================= */
+
+.venta-form-footer {
+  flex-shrink: 0;
+
+  padding: 18px 34px 22px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 12px;
+
+  border-top: 1px solid #ead5de;
+
+  background: #fffafb;
+
+  box-shadow:
+    0 -8px 22px rgba(70, 40, 52, 0.035);
+}
+
+
+.venta-button {
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 11px;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.venta-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+.venta-button-secondary {
+  border: 1px solid #e5c6d2;
+
+  background: white;
+
+  color: #725d67;
+}
+
+
+.venta-button-secondary:hover:not(:disabled) {
+  background: #fff4f8;
+
+  border-color: #dca2b8;
+}
+
+
+.venta-button-primary {
+  border: 1px solid var(--ventas-primary);
+
+  background: var(--ventas-primary);
+
+  color: white;
+
+  box-shadow:
+    0 9px 20px rgba(212, 95, 139, 0.16);
+}
+
+
+.venta-button-primary:hover:not(:disabled) {
+  background: var(--ventas-primary-dark);
+
+  transform: translateY(-1px);
+}
+
+
+.venta-button ion-icon {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .ventas-header {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .ventas-content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}
+
+
+@media (max-width: 760px) {
+
+  .ventas-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 30px 22px 25px;
+  }
+
+
+  .ventas-new-button {
+    width: 100%;
+  }
+
+
+  .ventas-content {
+    padding: 22px 18px 45px;
+  }
+
+
+  .ventas-stats {
+    grid-template-columns: 1fr;
+  }
+
+
+  .ventas-card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .ventas-refresh-button {
+    width: 100%;
+  }
+
+
+  .venta-modal-panel {
+    width: 100%;
+  }
+
+
+  .venta-form-header {
+    padding: 25px 22px;
+  }
+
+
+  .venta-form-content {
+    padding: 25px 22px 30px;
+  }
+
+
+  .venta-form-footer {
+    padding: 14px 22px 18px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .ventas-header h1 {
+    font-size: 34px;
+  }
+
+
+  .venta-form-header h2 {
+    font-size: 30px;
+  }
+
+
+  .venta-product-row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      65px
+      38px;
+  }
+
+
+  .venta-product-total {
+    grid-column: 1 / 3;
+
+    height: auto;
+
+    padding-top: 2px;
+  }
+
+
+  .venta-remove-product {
+    grid-column: 3;
+
+    grid-row: 2;
+  }
+
+
+  .venta-form-footer {
+    grid-template-columns: 1fr;
+  }
+
+}
