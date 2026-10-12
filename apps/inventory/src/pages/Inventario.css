@@ -1,0 +1,1464 @@
+/* =========================================================
+   PÉTALOS ADMIN — INVENTARIO
+   Diseño completo
+   ========================================================= */
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+  --petalos-primary: #d45f8c;
+  --petalos-primary-dark: #bd4f78;
+  --petalos-primary-soft: #f7c0d4;
+
+  --petalos-background: #fffafb;
+  --petalos-soft: #fff2f6;
+  --petalos-white: #ffffff;
+
+  --petalos-border: #ecd8e1;
+  --petalos-border-light: #f1e3e9;
+
+  --petalos-text: #403940;
+  --petalos-text-soft: #756b72;
+  --petalos-muted: #9a9096;
+
+  --petalos-success: #38a889;
+  --petalos-success-bg: #f1fbf7;
+  --petalos-success-border: #b9e5d7;
+
+  --petalos-danger: #c85f68;
+  --petalos-danger-bg: #fff5f6;
+  --petalos-danger-border: #ecccd0;
+}
+
+/* =========================================================
+   CONTENEDOR GENERAL
+   ========================================================= */
+
+.page-content {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 38px 48px 60px;
+
+  background: var(--petalos-background);
+
+  color: var(--petalos-text);
+
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   EVITAR SCROLL HORIZONTAL GLOBAL
+   ========================================================= */
+
+html,
+body,
+ion-app,
+ion-page,
+ion-content {
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.page-header {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 28px;
+
+  box-sizing: border-box;
+}
+
+.page-subtitle {
+  margin: 0 0 7px;
+
+  color: #c06b8d;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  color: #383238;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 32px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
+}
+
+.page-header p {
+  margin: 8px 0 0;
+
+  color: var(--petalos-muted);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BOTÓN NUEVO PRODUCTO
+   ========================================================= */
+
+.primary-button {
+  flex-shrink: 0;
+
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: var(--petalos-primary);
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(212, 95, 140, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  background: var(--petalos-primary-dark);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 11px 24px rgba(212, 95, 140, 0.23);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.primary-button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   TARJETA DE INVENTARIO
+   ========================================================= */
+
+.products-card {
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  background: var(--petalos-white);
+
+  border: 1px solid var(--petalos-border);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 20px rgba(70, 40, 55, 0.025);
+}
+
+/* =========================================================
+   HEADER DE LA TARJETA
+   ========================================================= */
+
+.products-header {
+  min-height: 82px;
+
+  padding: 21px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+.products-header h2 {
+  margin: 0;
+
+  color: #403a40;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+.product-count {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #9b9097;
+
+  font-size: 12px;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   ACTUALIZAR
+   ========================================================= */
+
+.refresh-button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: 1px solid #ead5de;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #a45f7d;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.refresh-button:hover {
+  background: #fff4f8;
+
+  border-color: #dda4ba;
+}
+
+/* =========================================================
+   BUSCADOR
+   ========================================================= */
+
+.search-container {
+  width: 100%;
+
+  padding: 0 24px 22px;
+
+  box-sizing: border-box;
+}
+
+.search-container input {
+  display: block;
+
+  width: 100%;
+
+  height: 45px;
+
+  box-sizing: border-box;
+
+  padding: 0 15px;
+
+  border: 1px solid #ead7df;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #fffafb;
+
+  color: #403a40;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-container input::placeholder {
+  color: #aaa0a6;
+}
+
+.search-container input:hover {
+  border-color: #dfbccb;
+}
+
+.search-container input:focus {
+  background: #ffffff;
+
+  border-color: #dc94b1;
+
+  box-shadow:
+    0 0 0 3px rgba(212, 95, 140, 0.08);
+}
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.table-container {
+  width: 100%;
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  border-top: 1px solid #f0e0e7;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    #d8a1b6
+    transparent;
+}
+
+/*
+   La tabla tiene un ancho mínimo para que las columnas
+   no se aplasten.
+*/
+
+.table-container table {
+  width: 100%;
+
+  min-width: 1100px;
+
+  border-collapse: collapse;
+
+  border-spacing: 0;
+
+  table-layout: fixed;
+
+  background: #ffffff;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   ANCHOS DE COLUMNAS
+   ========================================================= */
+
+.table-container th:nth-child(1) {
+  width: 105px;
+}
+
+.table-container th:nth-child(2) {
+  width: 220px;
+}
+
+.table-container th:nth-child(3) {
+  width: 110px;
+}
+
+.table-container th:nth-child(4) {
+  width: 130px;
+}
+
+.table-container th:nth-child(5) {
+  width: 115px;
+}
+
+.table-container th:nth-child(6) {
+  width: 125px;
+}
+
+.table-container th:nth-child(7) {
+  width: 125px;
+}
+
+.table-container th:nth-child(8) {
+  width: 90px;
+}
+
+.table-container th:nth-child(9) {
+  width: 105px;
+}
+
+.table-container th:nth-child(10) {
+  width: 190px;
+}
+
+/* =========================================================
+   ENCABEZADOS
+   ========================================================= */
+
+.table-container thead {
+  background: #fff1f6;
+}
+
+.table-container th {
+  height: 47px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #efdde5;
+
+  color: #796d74;
+
+  text-align: left;
+
+  font-size: 11px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   FILAS
+   ========================================================= */
+
+.table-container tbody tr {
+  background: #ffffff;
+
+  transition:
+    background 0.15s ease;
+}
+
+.table-container tbody tr:hover {
+  background: #fffafd;
+}
+
+.table-container tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container td {
+  height: 68px;
+
+  padding: 10px 14px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #f1e3e8;
+
+  color: #665e64;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   NOMBRE DEL PRODUCTO
+   ========================================================= */
+
+.product-name {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.product-name strong {
+  display: block;
+
+  max-width: 100%;
+
+  color: #403a40;
+
+  font-size: 12px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.product-name small {
+  display: block;
+
+  max-width: 100%;
+
+  color: #a0979d;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   CÓDIGO
+   ========================================================= */
+
+.product-code {
+  color: #766b72;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   STOCK
+   ========================================================= */
+
+.stock {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #4d474c;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.stock.low {
+  color: #d17b52;
+}
+
+/* =========================================================
+   ESTADO
+   ========================================================= */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 62px;
+
+  height: 27px;
+
+  padding: 0 10px;
+
+  box-sizing: border-box;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status.active {
+  color: #309878;
+
+  background: var(--petalos-success-bg);
+
+  border: 1px solid var(--petalos-success-border);
+}
+
+.status.inactive {
+  color: #a16c75;
+
+  background: var(--petalos-danger-bg);
+
+  border: 1px solid var(--petalos-danger-border);
+}
+
+/* =========================================================
+   ACCIONES
+   ========================================================= */
+
+.actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+.table-button {
+  height: 34px;
+
+  padding: 0 12px;
+
+  border: 1px solid #e8d5de;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #a45f7d;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.table-button:hover {
+  background: #fff4f8;
+
+  border-color: #dda6bb;
+}
+
+.table-button.delete {
+  color: var(--petalos-danger);
+
+  border-color: #eccfd3;
+}
+
+.table-button.delete:hover {
+  background: #fff5f5;
+
+  border-color: #e2aeb3;
+}
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.message {
+  padding: 38px 24px;
+
+  color: #958a90;
+
+  text-align: center;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.message.error {
+  color: #c55f68;
+
+  background: #fff7f7;
+}
+
+/* =========================================================
+   SIN RESULTADOS
+   ========================================================= */
+
+.empty-products {
+  padding: 55px 24px;
+
+  text-align: center;
+}
+
+.empty-title {
+  color: #50484e;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.empty-text {
+  margin-top: 7px;
+
+  color: #9c9298;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   DRAWER — NUEVO / EDITAR PRODUCTO
+   ========================================================= */
+
+.inventario-drawer-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: rgba(43, 32, 38, 0.35) !important;
+  z-index: 9998 !important;
+}
+
+.inventario-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: auto !important;
+  width: min(680px, 92vw) !important;
+  max-width: 680px !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  background: #fffafb !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+  z-index: 9999 !important;
+  box-shadow: -18px 0 55px rgba(55, 35, 45, 0.16) !important;
+  animation: inventarioDrawerIn .28s cubic-bezier(.22,1,.36,1) both;
+}
+
+.inventario-drawer .product-form {
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  padding: 38px 42px 34px !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  background: #fffafb !important;
+  color: #403940 !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* HEADER */
+.inventario-drawer .form-header {
+  width: 100% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  margin: 0 0 30px !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.inventario-drawer .form-kicker {
+  margin: 0 0 7px !important;
+  color: #bd6288 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+}
+
+.inventario-drawer .form-header h2 {
+  margin: 0 !important;
+  color: #34303a !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 36px !important;
+  line-height: 1.1 !important;
+  font-weight: 700 !important;
+}
+
+.inventario-drawer .form-header p {
+  margin: 9px 0 0 !important;
+  color: #8c7b84 !important;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+}
+
+.inventario-drawer .close-button {
+  flex: 0 0 48px !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  border: 1px solid #e7cbd6 !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  color: #cc6a8c !important;
+  font: 300 28px/1 Arial, sans-serif !important;
+  cursor: pointer !important;
+}
+
+.inventario-drawer .close-button:hover {
+  background: #fff3f7 !important;
+  border-color: #dda0b7 !important;
+}
+
+/* SECCIONES */
+.inventario-drawer .form-section {
+  width: 100% !important;
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+}
+
+.inventario-drawer .inventory-section,
+.inventario-drawer .image-section {
+  margin-top: 30px !important;
+}
+
+.inventario-drawer .form-section-title {
+  margin: 0 !important;
+  color: #403941 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 19px !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+}
+
+.inventario-drawer .form-section-description {
+  margin: 5px 0 0 !important;
+  color: #978890 !important;
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+/* GRID */
+.inventario-drawer .form-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+  column-gap: 24px !important;
+  row-gap: 17px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.inventario-drawer .form-field {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.inventario-drawer .form-field-full {
+  grid-column: 1 / -1 !important;
+}
+
+/* LABELS */
+.inventario-drawer .form-field label {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  color: #4b4148 !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+}
+
+/* CAMPOS */
+.inventario-drawer .form-field input,
+.inventario-drawer .form-field select,
+.inventario-drawer .form-field textarea {
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  border: 1px solid #e5d3dc !important;
+  outline: none !important;
+  background: #fff !important;
+  color: #403a40 !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 14px !important;
+  box-shadow: none !important;
+}
+
+.inventario-drawer .form-field input,
+.inventario-drawer .form-field select {
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 14px !important;
+  border-radius: 11px !important;
+}
+
+.inventario-drawer .form-field textarea {
+  height: 86px !important;
+  min-height: 86px !important;
+  padding: 12px 14px !important;
+  border-radius: 11px !important;
+  resize: vertical !important;
+  line-height: 1.45 !important;
+}
+
+.inventario-drawer .form-field input::placeholder,
+.inventario-drawer .form-field textarea::placeholder {
+  color: #aaa0a6 !important;
+  opacity: 1 !important;
+}
+
+.inventario-drawer .form-field input:focus,
+.inventario-drawer .form-field select:focus,
+.inventario-drawer .form-field textarea:focus {
+  border-color: #d88da9 !important;
+  box-shadow: 0 0 0 3px rgba(212,95,140,.08) !important;
+}
+
+.inventario-drawer .form-field select {
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-image: linear-gradient(45deg, transparent 50%, #8f7a84 50%), linear-gradient(135deg, #8f7a84 50%, transparent 50%) !important;
+  background-position: calc(100% - 17px) 21px, calc(100% - 12px) 21px !important;
+  background-size: 5px 5px, 5px 5px !important;
+  background-repeat: no-repeat !important;
+  padding-right: 38px !important;
+}
+
+.inventario-drawer .form-field input[type="number"] {
+  appearance: textfield !important;
+  -moz-appearance: textfield !important;
+}
+
+.inventario-drawer .form-field input[type="number"]::-webkit-inner-spin-button,
+.inventario-drawer .form-field input[type="number"]::-webkit-outer-spin-button {
+  margin: 0 !important;
+  -webkit-appearance: none !important;
+}
+
+/* ERROR */
+.inventario-drawer .form-error {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 18px 0 0 !important;
+  padding: 12px 14px !important;
+  border: 1px solid #efc8cd !important;
+  border-radius: 10px !important;
+  background: #fff4f5 !important;
+  color: #c45f68 !important;
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+/* BOTONES */
+.inventario-drawer .form-actions {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+  gap: 14px !important;
+  width: 100% !important;
+  margin: 29px 0 0 !important;
+  padding: 22px 0 0 !important;
+  border-top: 1px solid #ead9e0 !important;
+  box-sizing: border-box !important;
+}
+
+.inventario-drawer .form-actions button {
+  width: 100% !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  margin: 0 !important;
+  padding: 0 20px !important;
+  box-sizing: border-box !important;
+  border-radius: 12px !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+.inventario-drawer .secondary-button {
+  background: #fff !important;
+  color: #75656e !important;
+  border: 1px solid #e6cbd6 !important;
+}
+
+.inventario-drawer .primary-button {
+  background: #d45f8c !important;
+  color: #fff !important;
+  border: 1px solid #d45f8c !important;
+  box-shadow: 0 8px 20px rgba(212,95,140,.16) !important;
+}
+
+.inventario-drawer .primary-button:hover {
+  background: #cb5684 !important;
+}
+
+/* SCROLLBAR */
+.inventario-drawer .product-form::-webkit-scrollbar {
+  width: 7px;
+}
+
+.inventario-drawer .product-form::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.inventario-drawer .product-form::-webkit-scrollbar-thumb {
+  background: #e0b0c2;
+  border-radius: 20px;
+}
+
+/* ANIMACIÓN */
+@keyframes inventarioDrawerIn {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .page-content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 25px 18px 40px !important;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+
+  .products-header {
+    padding: 20px;
+  }
+
+  .search-container {
+    padding: 0 20px 20px;
+  }
+
+  .inventario-drawer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+
+  .inventario-drawer .product-form {
+    padding: 28px 22px 30px !important;
+  }
+
+  .inventario-drawer .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .inventario-drawer .form-field-full {
+    grid-column: auto !important;
+  }
+
+  .inventario-drawer .form-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .inventario-drawer .form-header h2 {
+    font-size: 30px !important;
+  }
+
+  .inventario-drawer .close-button {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+
+/* =========================================================
+   CORRECCIÓN FINAL — EL LAYOUT YA TIENE SIDEBAR EN App.css
+   ========================================================= */
+
+.page-content {
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  box-sizing: border-box;
+}
+
+.products-card,
+.page-header,
+.search-container,
+.table-container {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.table-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.table-container table {
+  margin: 0;
+}
+
+/* En pantallas normales la tabla debe arrancar desde la primera columna. */
+@media (min-width: 1000px) {
+  .table-container table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .table-container th:nth-child(1) { width: 9%; }
+  .table-container th:nth-child(2) { width: 17%; }
+  .table-container th:nth-child(3) { width: 9%; }
+  .table-container th:nth-child(4) { width: 11%; }
+  .table-container th:nth-child(5) { width: 10%; }
+  .table-container th:nth-child(6) { width: 10%; }
+  .table-container th:nth-child(7) { width: 10%; }
+  .table-container th:nth-child(8) { width: 7%; }
+  .table-container th:nth-child(9) { width: 7%; }
+  .table-container th:nth-child(10) { width: 10%; }
+}
+/* =========================================================
+   CARGA DE IMAGEN DEL PRODUCTO
+   ========================================================= */
+
+.inventario-drawer .inventario-upload {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Caja principal de carga */
+.inventario-drawer .inventario-upload-box {
+  width: 100%;
+  min-height: 190px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px dashed #dfb7c7;
+  border-radius: 14px;
+
+  background: #fff8fb;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.inventario-drawer .inventario-upload-box:hover {
+  border-color: #d88da9;
+  background: #fff4f8;
+}
+
+/* Contenido cuando todavía no hay imagen */
+.inventario-drawer .inventario-upload-empty {
+  width: 100%;
+  padding: 28px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.inventario-drawer .inventario-upload-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  border-radius: 50%;
+
+  background: #fbe1ea;
+  color: #c85f87;
+
+  font-size: 23px;
+}
+
+.inventario-drawer .inventario-upload-title {
+  margin: 0;
+
+  color: #50444b;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.inventario-drawer .inventario-upload-description {
+  margin: 6px 0 15px;
+
+  color: #9a8e95;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* Input de archivo */
+.inventario-drawer .inventario-file-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+/* Botón seleccionar imagen */
+.inventario-drawer .inventario-upload-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 38px;
+
+  padding: 0 16px;
+
+  border: 1px solid #e4c4d0;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #a45f7d;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.inventario-drawer .inventario-upload-button:hover {
+  background: #fff1f6;
+  border-color: #d99ab2;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   PREVISUALIZACIÓN
+   ========================================================= */
+
+.inventario-drawer .inventario-image-preview {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+}
+
+.inventario-drawer .inventario-image-preview img {
+  display: block;
+
+  width: 150px;
+  height: 150px;
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  border: 1px solid #ead6df;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 6px 18px rgba(70, 40, 55, 0.08);
+}
+
+/* =========================================================
+   ACCIONES DE IMAGEN
+   ========================================================= */
+
+.inventario-drawer .inventario-image-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 2px;
+}
+
+.inventario-drawer .inventario-image-change,
+.inventario-drawer .inventario-image-remove {
+  height: 34px;
+
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.inventario-drawer .inventario-image-change {
+  border: 1px solid #e4c4d0;
+
+  background: #ffffff;
+
+  color: #a45f7d;
+}
+
+.inventario-drawer .inventario-image-change:hover {
+  background: #fff2f6;
+  border-color: #d99ab2;
+}
+
+.inventario-drawer .inventario-image-remove {
+  border: 1px solid #eccfd3;
+
+  background: #fffafa;
+
+  color: #c85f68;
+}
+
+.inventario-drawer .inventario-image-remove:hover {
+  background: #fff3f4;
+  border-color: #dfabb1;
+}
+
+/* =========================================================
+   TEXTO INFORMATIVO
+   ========================================================= */
+
+.inventario-drawer .inventario-upload-info {
+  margin: 9px 0 0;
+
+  color: #a0959b;
+
+  font-size: 10px;
+  line-height: 1.4;
+
+  text-align: center;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "front-mvp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
